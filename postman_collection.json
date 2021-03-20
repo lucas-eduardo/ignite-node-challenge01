@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "3058392f-c2f6-44ab-87a4-f3c70cb16f3d",
+		"name": "challenge01",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Lucas Eduardo\",\n\t\"username\": \"lucas-eduardo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Todo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "lucas-eduardo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Teste\",\n\t\"deadline\": \"2021-03-20\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "lucas-eduardo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3333/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Todo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "username",
+						"value": "lucas-eduardo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Todo Test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/todos/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"todos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todo Done",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "username",
+						"value": "lucas-eduardo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3333/todos/4a5fd48d-bb58-4f58-92c9-3ec29773d753/done",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"todos",
+						"4a5fd48d-bb58-4f58-92c9-3ec29773d753",
+						"done"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Todo",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "username",
+						"value": "lucas-eduardo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3333/todos/4a5fd48d-bb58-4f58-92c9-3ec29773d753",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"todos",
+						"4a5fd48d-bb58-4f58-92c9-3ec29773d753"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
